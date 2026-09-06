@@ -1,0 +1,264 @@
+// Theme: design tokens (scss:defaults) + header/footer rules (scss:rules).
+//
+// Edit the variables under `scss:defaults` to move the whole site: $accent
+// recolours every link, publication number and active nav item; $header-h
+// resizes the black brand block; the --rail/--gutter/--measure custom
+// properties under `scss:rules` re-lay out the page grid.
+
+/*-- scss:defaults --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
+
+$ink:       #24292e;
+$ink-soft:  #4a5158;
+$accent:    #1f4e79;
+$accent-lt: #2c6aa0;
+$bone:      #f0eeeb;
+$rule:      #e2ded8;
+
+$header-h:      104px;
+$header-h-sm:   62px;
+$block-bg:      #000000;
+$block-fg:      #ffffff;
+$header-rule:   #000000;
+$brand-size:    1.4rem;
+// Narrow enough that "Arthur Jun" doesn't fit (forces the break after
+// "Arthur"), wide enough that "Jun Shin" does fit on the second line.
+$brand-measure: 100px;
+$nav-size:      1.15rem;
+
+$body-bg:    #ffffff;
+$body-color: $ink;
+$primary:    $accent;
+$link-color: $accent;
+$link-hover-color: $accent-lt;
+$link-decoration: none;
+
+$font-display: Oswald;
+$font-body:    Source Sans 3;
+$font-family-sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-size-root:   17px;
+$body-line-height: 1.6;
+$headings-font-weight: 700;
+$h1-font-size: 2rem;
+$h2-font-size: 1.45rem;
+$h3-font-size: 1.15rem;
+
+$navbar-bg: $bone;
+$navbar-fg: #000;
+$navbar-hl: $accent;
+$footer-bg: $bone;
+$footer-fg: $ink;
+$footer-size: 0.88rem;
+
+/*-- scss:rules --*/
+
+:root {
+  --ink: #24292e;
+  --ink-soft: #4a5158;
+  --accent: #1f4e79;
+  --accent-lt: #2c6aa0;
+  --bone: #f0eeeb;
+  --rule: #e2ded8;
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+
+  /* The grid: rail + gutter + measure. */
+  --rail: 320px;
+  --gutter: 72px;
+  --measure: 760px;
+  --grid-w: calc(var(--rail) + var(--gutter) + var(--measure));
+
+  --portrait-max: 289px;
+  --section-gap: 2.6rem;
+  --heading-gap: 1.1rem;
+  --entry-gap: 1.35rem;
+  --update-gap: 0.65rem;
+  --number-width: 2.6rem;
+  --number-gap: 1rem;
+  --footer-size: 0.88rem;
+}
+
+// ============================================================================
+//  Header and footer rules.
+//
+//  Header design is Real World Data Science. Measured off the live site at a
+//  1280px viewport: a 151px bar (150 + a 1px black rule) with a 263x150 black
+//  block flush top-left and the nav links pushed to the bottom edge by
+//  `margin-top: 85px`. RWDS ships that block as a PNG; here it is CSS on the
+//  navbar title, so the name stays real text.
+// ============================================================================
+
+#quarto-header {
+  border-bottom: 1px solid $header-rule;
+}
+
+.navbar {
+  padding: 0;
+  font-family: "#{$font-display}", sans-serif;
+  font-size: $nav-size;
+}
+
+.navbar > .navbar-container {
+  align-items: stretch;      // lets the black block run the full height
+  min-height: $header-h;
+  padding-left: 0;
+}
+
+// ---- The black block -------------------------------------------------------
+
+.navbar-brand-container {
+  align-self: stretch;
+  margin-left: 1.25rem;
+  display: flex;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  background: $block-bg;
+  white-space: normal;
+  padding: 0 1.35rem;
+  margin: 0;
+  height: 100%;
+}
+
+.navbar-brand .navbar-title {
+  color: $block-fg;
+  font-family: "#{$font-display}", sans-serif;
+  font-weight: 500;
+  font-size: $brand-size;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  // A tight measure wraps the name onto two lines, right after "Arthur".
+  // Widen $brand-measure above to keep it on one.
+  max-width: $brand-measure;
+  display: block;
+  white-space: normal;       // Bootstrap sets nowrap on .navbar-brand
+  // The box is exactly $brand-measure wide, but neither line's rendered
+  // text quite fills it -- centre so the left/right margins inside the
+  // black block match instead of the text reading flush-left.
+  text-align: center;
+}
+.navbar-brand:hover .navbar-title { color: $bone; }
+
+// "Arthur" alone is shorter than "Jun Shin" below it -- stretch its letters
+// so the first line spans the same width as the second, instead of reading
+// short and left-heavy. Value tuned by measuring both lines' rendered width.
+.navbar-brand .navbar-title::first-line {
+  letter-spacing: 0.1em;
+}
+
+// ---- Links, bottom-aligned against the block -------------------------------
+
+.navbar .navbar-collapse { align-items: flex-end; }
+.navbar-nav { align-items: flex-end; }
+
+.navbar-nav .nav-link {
+  color: #000 !important;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.9rem 0.85rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus { color: $accent !important; }
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link,
+.navbar-nav .active > .nav-link {
+  color: $accent !important;
+  box-shadow: inset 0 -3px 0 0 $accent;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0;
+  border: 1px solid #000;
+  font-family: "#{$font-display}", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.navbar #quarto-search {
+  margin-left: 0.4rem;
+  align-self: flex-end;      // sit on the link row, not the top of the block
+  padding-bottom: 0.75rem;
+}
+.aa-DetachedSearchButton { border: none; background: transparent; }
+
+// ---- Collapsed (mobile) ----------------------------------------------------
+// The tall block would eat a phone screen, so it drops to a single-line bar.
+// RWDS flips the open menu panel to black; kept.
+
+@media (max-width: 991.98px) {
+  .navbar > .navbar-container {
+    min-height: $header-h-sm;
+    align-items: center;
+    // Collapsed, the row is only toggler + brand + search (the nav-link
+    // panel is display:none until opened), and Bootstrap's own
+    // `justify-content: space-between` spreads those three apart -- which
+    // reads as the brand block drifting to the middle of the bar. Pack
+    // everything to the start instead, then push search back to the right.
+    justify-content: flex-start;
+  }
+  .navbar-brand-container { align-self: stretch; }
+  .navbar-brand { padding: 0 0.9rem; }
+  .navbar-brand .navbar-title {
+    font-size: 1.05rem;
+    max-width: none;
+    letter-spacing: 0.06em;
+  }
+  .navbar-brand .navbar-title::first-line { letter-spacing: 0.06em; }
+  .navbar .navbar-collapse { align-items: stretch; }
+  .navbar-nav { align-items: stretch; }
+  .navbar-nav-scroll { background: #000; padding: 0.5rem 0; }
+  .navbar-nav .nav-link { color: #fff !important; padding: 0.5rem 1rem; }
+  .navbar-nav .nav-link.active { box-shadow: none; color: #fff !important; }
+  // #quarto-search is itself the flex child here (its `.type-overlay` class
+  // *is* the search icon's own box, not a wrapper around it) -- but the
+  // un-scoped rule above targets it by ID, which outranks any class-based
+  // override, so it has to be beaten with the same ID selector here:
+  // desktop's bottom-aligned, fixed-margin placement doesn't apply once the
+  // link row is hidden and there's nothing left to align against.
+  .navbar #quarto-search {
+    align-self: center;
+    margin-left: auto;
+    padding-bottom: 0;
+  }
+}
+
+// ============================================================================
+//  Footer
+// ============================================================================
+
+.nav-footer {
+  border-top: 1px solid #000;
+  font-size: $footer-size;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  // Quarto wraps left/center/right onto separate lines below its own
+  // breakpoint; our content (a copyright line, one icon) fits on one line
+  // at any width this site supports, so it never needs to.
+  flex-wrap: nowrap !important;
+}
+.nav-footer a { color: $ink; font-weight: 400; }
+.nav-footer a:hover { color: $accent; }
+
+// Quarto always renders a `.nav-footer-center` column even when
+// page-footer.center isn't set in _quarto.yml (only left + right are) --
+// an empty column that still claims ~7em of vertical space of its own
+// (3em margin-top + 3em min-height + 1em margin-bottom) once Quarto's
+// responsive footer rules kick in. That's most of why the mobile footer
+// bar was reading so tall; drop the column outright since it's never used.
+.nav-footer-center { display: none !important; }
+
+// The same responsive rules give `.nav-footer-left`/`-right` a forced
+// `flex: 100%` and `margin-bottom: 1em`, stacking them into their own
+// full-width rows -- undo that so they stay side by side.
+.nav-footer-left,
+.nav-footer-right {
+  flex: 0 1 auto !important;
+  margin-bottom: 0 !important;
+}

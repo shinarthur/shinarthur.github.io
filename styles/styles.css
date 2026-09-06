@@ -1,0 +1,405 @@
+/* ============================================================================
+   Component and layout rules.
+
+   Colours, fonts and spacing are read from the CSS custom properties defined
+   in styles/theme.scss. Change a number there, not here. This file is about
+   STRUCTURE -- what a publication entry is made of, how the page grid is
+   arranged.
+
+   Why this is a separate file from theme.scss: Quarto appends its own rules
+   AFTER a user theme's `scss:rules`, so overrides of `.quarto-about-*`, the
+   page grid and heading styles only land from the last stylesheet in the head,
+   which is this one. A few still need !important; they are grouped at the
+   bottom under "Hard overrides".
+   ============================================================================ */
+
+/* ---- Body copy  (chriswblair.com) ---------------------------------------- */
+
+body { -webkit-font-smoothing: antialiased; }
+
+main.content { padding-top: 2.5rem; padding-bottom: 3rem; }
+
+main p, main li { font-size: 1rem; line-height: 1.6; }
+
+main a {
+  font-weight: 700;              /* Blair bolds every in-text link */
+  text-underline-offset: 0.18em;
+}
+main a:hover { text-decoration: underline; }
+
+/* academicpages puts the rule UNDER the heading, not above it. */
+main h2 {
+  margin-top: var(--section-gap);
+  margin-bottom: var(--heading-gap);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  letter-spacing: -0.01em;
+}
+main > section.level2:first-of-type > h2,
+main > h2:first-of-type { margin-top: 1.4rem; }
+
+/* An .eyebrow kicker is written INSIDE the h2, so it rides along with the
+   heading instead of depending on sibling selectors to sit near it. */
+main h2 .eyebrow { margin-bottom: 0.3rem; line-height: 1.2; }
+
+.lead { font-size: 1.08rem; color: var(--ink-soft); }
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ============================================================================
+   Page grid  --  academicpages / tanjingling.github.io
+
+   Measured on tanjingling.github.io at a 1280px viewport:
+
+     rail      left 18,  width 187
+     gutter    73px
+     text      left 278, width 760      <- the measure that makes it read
+     right     242px of deliberate whitespace
+
+   Left-anchored, not centred: rail, wide gutter, 760px of text, then air.
+   The rail is wider here (320px) because it holds a 17em portrait.
+
+   The rail exists on the `about` page only. Interior pages centre the same
+   measure inside rail+gutter+measure, so the absent rail does not read as a
+   hole down the left of every page.
+   ============================================================================ */
+
+.quarto-about-trestles {
+  padding-top: 1.25rem;
+  gap: var(--gutter);
+  max-width: var(--grid-w);
+}
+
+.quarto-about-trestles .about-entity {
+  flex: 0 0 var(--rail);
+  padding-top: 0.5rem;
+}
+
+.quarto-about-trestles .about-contents {
+  flex: 0 0 var(--measure);
+  max-width: var(--measure);
+  padding-left: 0;      /* the gutter separates the columns; no divider rule */
+  padding-right: 0;
+}
+
+/* On the home page <main> sits INSIDE .about-contents, so cancel the
+   interior-page positioning there -- the trestles grid already places it. */
+.quarto-about-trestles main.content {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ---- The rail: portrait + pill links  (chriswblair.com) ------------------- */
+/* Measured: image 289x338, border-radius 4.25px -- Quarto's
+   `image-shape: rounded` at `image-width: 17em`. The links are Quarto's own
+   bordered pills, centred and wrapped underneath, left alone but recoloured. */
+
+.quarto-about-trestles .about-image {
+  width: 100%;
+  max-width: var(--portrait-max);
+  margin-bottom: 1.25rem;
+}
+
+.quarto-about-trestles #title-block-header { margin-bottom: 0.8rem; }
+.quarto-about-trestles h1.title {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+.quarto-about-trestles .subtitle,
+.quarto-about-trestles p.subtitle.lead {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  font-style: normal;
+}
+
+.about-links .about-link { color: var(--ink-soft); }
+.about-links .about-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: transparent;
+}
+.about-links .about-link i { color: var(--accent); }
+
+/* Two per row (LinkedIn+Scholar, then GitHub+Email), in whatever order the
+   links appear in index.qmd -- a grid guarantees the count per row instead
+   of leaving it to how much text happens to fit, which is what Quarto's own
+   flex-wrap does. Desktop only: below the trestles breakpoint the rail
+   collapses and links go back to full-width stacked rows.
+
+   Quarto's own `div.quarto-about-trestles .about-entity .about-links` rule
+   sets `display: flex`; that selector's three classes plus an element
+   outrank a bare `.about-links`, so `display: grid` needs !important here
+   to actually win regardless of the two rules' order in the stylesheet. */
+@media (min-width: 992px) {
+  .about-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 1.2rem;
+    row-gap: 0.85rem;
+  }
+}
+
+/* ---- Stacked (tablet / phone) -------------------------------------------- */
+
+@media (max-width: 991.98px) {
+  .quarto-about-trestles {
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 100%;
+  }
+  .quarto-about-trestles .about-entity,
+  .quarto-about-trestles .about-contents {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .quarto-about-trestles .about-image { max-width: 220px; }
+  main.content { max-width: 100%; margin-left: auto; }
+  /* Quarto's own page grid used to inset every page from the viewport edge
+     by ~25.5px on each side; dropping that grid (see the page-columns rule
+     below) dropped the inset with it, so it has to be restated here -- on
+     the shared `.page-columns` wrapper rather than on `main.content`,
+     since on the home page the photo+links rail (`.about-entity`) is a
+     *sibling* of `main.content`, not a descendant of it, and needs the
+     same inset. Quarto sets `#quarto-content { padding: 0 }` by ID, which
+     outranks a class selector regardless of source order, hence !important. */
+  .page-columns { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+}
+
+/* ============================================================================
+   Content blocks
+   ============================================================================ */
+
+/* ---- Dated lists: "Recent updates", CV grants and awards ------------------ */
+
+
+.updates ul,
+ul.updates { list-style: none; padding-left: 0; margin-top: 0.5rem; }
+
+.updates li {
+  position: relative;
+  padding-left: 1.1rem;
+  padding-bottom: var(--update-gap);
+  line-height: 1.55;
+  font-size: 0.97rem;
+}
+.updates li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.u-date {
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.u-date::after { content: " \2014 "; color: #6b7177; font-weight: 400; }
+
+/* ---- Numbered publication entries  (chriswblair.com) --------------------- */
+
+.pub {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: var(--entry-gap) 0;
+  border-top: 1px solid var(--rule);
+}
+.pub:first-of-type { border-top: none; }
+.pub p { margin-bottom: 0.3rem; }
+
+.pubnum {
+  flex: 0 0 var(--number-width);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.pub-body { flex: 1 1 auto; min-width: 0; }
+.pub-body a { font-weight: 700; }
+
+/* A styling hook only. Italics come from the markdown in the section file,
+   so `venue: '*Journal Name*, 2026.'` italicises the title but not the year. */
+.venue { }
+.award { color: var(--accent); font-size: 0.88rem; }
+.status {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  border: 1px solid #d9d6d0;
+  padding: 0.1rem 0.45rem;
+  margin-left: 0.35rem;
+  white-space: nowrap;
+}
+
+details > summary {
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.92rem;
+  margin-top: 0.35rem;
+}
+details > p, details > div {
+  margin-top: 0.5rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---- Course / CV entries ------------------------------------------------- */
+
+.course {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.course:first-of-type { border-top: none; }
+.course .course-meta {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* ---- Eyebrow labels ------------------------------------------------------ */
+
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* ---- Buttons and images -------------------------------------------------- */
+
+.btn-primary {
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: var(--accent-lt);
+  --bs-btn-hover-border-color: var(--accent-lt);
+  border-radius: 0;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.content img, img.figure-img { border-radius: 4px; }
+
+/* ---- Embedded CV PDF ------------------------------------------------------ */
+
+.cv-embed {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  margin-top: 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+@media print {
+  #quarto-header, .nav-footer, .about-links { display: none !important; }
+  main.content { padding-top: 0; }
+}
+
+/* Quarto wraps every page in a CSS Grid (`#quarto-content.page-columns`)
+   whose content row is sized to `max-content` -- built to support a
+   column-margin/TOC sidebar, which nothing on this site uses. Below the
+   ~992px trestles breakpoint the rail stacks into a column and the About
+   text becomes much taller than the photo above it; the grid's max-content
+   row height doesn't reliably keep up with that (a two-pass grid+flex
+   sizing quirk -- the row can end up sized to roughly the photo column
+   alone). With the row too short and `overflow: visible`, the About text
+   just keeps rendering past the row boundary instead of pushing the next
+   row down, so the footer -- which starts right where the row was
+   *supposed* to end -- sits on top of text that hasn't finished yet.
+   Nothing here needs the sidebar grid, so drop it for plain block flow,
+   where an element's height always pushes whatever comes after it down. */
+#quarto-content.page-columns { display: block !important; }
+
+/* ============================================================================
+   Hard overrides
+
+   Quarto's own about and grid CSS loads after this file, so the column sizes
+   need !important to land. Everything above wins on source order alone.
+   ============================================================================ */
+
+@media (min-width: 992px) {
+  .quarto-about-trestles {
+    /* Quarto drops this div into the `page` track (inset ~26px). Span every
+       track so it shares the interior pages' origin, then position it with the
+       same viewport-based calc -- that is what keeps the text column on the
+       same x from page to page. */
+    grid-column: 1 / -1 !important;
+    gap: var(--gutter) !important;
+    max-width: var(--grid-w) !important;
+    margin-left: calc(50vw - (var(--grid-w) / 2)) !important;
+    margin-right: auto !important;
+  }
+  .quarto-about-trestles .about-entity {
+    flex: 0 0 var(--rail) !important;
+    max-width: var(--rail) !important;
+  }
+  .quarto-about-trestles .about-contents {
+    flex: 0 0 var(--measure) !important;
+    max-width: var(--measure) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* Quarto's trestles template draws a rule between the two columns. Neither
+     reference site has one -- the gutter does the separating. */
+  .quarto-about-trestles .about-contents { border-left: none !important; }
+}
+
+/* Interior pages: no rail, so the measure is centred inside the full grid
+   rather than left in the home page's right-hand slot -- otherwise the rail's
+   width reads as a hole down the left of every page. For a flush-left column
+   instead, drop the `+ (var(--grid-w) - var(--measure)) / 2` term.
+
+   `main.content` lives in Quarto's page-columns grid, so it has to be told to
+   span every track first: max-width can only shrink an item inside its track,
+   never move it, which is why the width is set outright. */
+@media (min-width: 992px) {
+  main.content {
+    grid-column: 1 / -1 !important;
+    width: var(--measure) !important;
+    max-width: none !important;
+    margin-right: auto !important;
+  }
+}
+@media (min-width: 1260px) {
+  main.content {
+    margin-left: calc(
+      50vw - (var(--grid-w) / 2) + ((var(--grid-w) - var(--measure)) / 2)
+    ) !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1259.98px) {
+  main.content { margin-left: auto !important; }
+}
+
+/* Quarto's theme resets the h2 rule, so restate it here. */
+main h2 {
+  border-bottom: 1px solid var(--rule) !important;
+  padding-bottom: 0.5rem !important;
+}

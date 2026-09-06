@@ -1,0 +1,18 @@
+# Build output.
+/_site/
+/.quarto/
+
+# RStudio.
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+.DS_Store
+Thumbs.db
+
+**/*.quarto_ipynb
+
+# Accidental output from hitting Render on a plain markdown file.
+/README.html
+/README_files/

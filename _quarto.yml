@@ -1,0 +1,49 @@
+# Site configuration. Edit this file directly -- nothing generates it.
+#
+#   pages          index.qmd, research.qmd, cv.qmd  (add a .qmd, add a nav entry)
+#   look           styles/theme.scss (tokens) + styles/styles.css (structure)
+
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Arthur Jun Shin"
+  description: "Ph.D. student in the Department of Politics at Princeton University."
+  site-url: https://shinarthur.github.io
+  navbar:
+    pinned: true
+    collapse-below: lg
+    title: "Arthur Jun Shin"
+    search: true
+    right:
+      - text: Home
+        href: index.qmd
+      - text: Research
+        href: research.qmd
+      # - text: Data
+      #   href: data.qmd
+      - text: CV
+        href: cv.qmd
+  page-footer:
+    left: "&copy; 2026 Arthur Jun Shin"
+    right:
+      - icon: envelope
+        href: mailto:shinarthur@princeton.edu
+        aria-label: Email
+  open-graph: true
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/theme.scss
+    css: styles/styles.css
+    page-layout: full
+    toc: false
+    anchor-sections: true
+    link-external-newwindow: true
+    link-external-icon: false
+    smooth-scroll: true
+
+editor: source

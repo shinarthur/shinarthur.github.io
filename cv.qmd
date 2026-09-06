@@ -1,0 +1,13 @@
+---
+title: Curriculum Vitae
+subtitle: Last updated September 2026.
+---
+
+[Download PDF](files/ArthurJunShin_CV_09Sep2026.pdf){.btn .btn-primary}
+
+```{=html}
+<iframe class="cv-embed" src="files/ArthurJunShin_CV_09Sep2026.pdf" title="Curriculum Vitae PDF">
+  <p>Your browser can't display PDFs inline. <a href="files/ArthurJunShin_CV_09Sep2026.pdf">Download the CV</a> instead.</p>
+</iframe>
+```
+

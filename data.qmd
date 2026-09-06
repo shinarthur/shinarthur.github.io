@@ -1,0 +1,29 @@
+---
+title: Data
+subtitle: Coming soon
+---
+
+```{=html}
+<!-- Publication numbers in [n]{.pubnum} are typed by hand and run
+     continuously down the page, across sections. Renumber when you insert. -->
+```
+
+<!-- ## Coming soon {#work-in-progress} -->
+
+<!-- :::: pub -->
+<!-- ::: pub-body -->
+<!-- **Diversified Balancing: How External Security Threats Drive Arms Supplier Diversification**<br> *Draft available upon request*. -->
+<!-- ::: -->
+<!-- :::: -->
+
+<!-- :::: pub -->
+<!-- ::: pub-body -->
+<!-- **Introducing the Security Council and Use of Force Justification (SCRUFJ) Text Corpus Dataset”**<br> with Chu, Jonathan. -->
+<!-- ::: -->
+<!-- :::: -->
+
+<!-- :::: pub -->
+<!-- ::: pub-body -->
+<!-- **How Firms Respond to Regulatory Ambiguity: Rhetorical Political Alignment After China’s Tech Crackdown**<br> with Zhang, Zhen & Zhang, Chunyi. -->
+<!-- ::: -->
+<!-- :::: -->

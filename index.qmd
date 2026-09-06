@@ -1,0 +1,33 @@
+---
+title: Arthur Jun Shin
+subtitle: Ph.D. Student in Politics · Princeton University
+page-layout: full
+about:
+  template: trestles
+  image: images/lkyspp_headshot.jpg
+  image-shape: rounded
+  image-width: 17em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/arthurshin/
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?hl=en&user=StIEfjoAAAAJ
+    - icon: github
+      text: GitHub
+      href: https://github.com/shinarthur
+    - icon: envelope
+      text: Email
+      href: mailto:shinarthur@princeton.edu
+
+
+---
+
+## About me {#about-me}
+
+Hello! I am a Ph.D. student in the [Department of Politics](https://politics.princeton.edu/) at **Princeton University**, specializing in international relations. My research focuses on international security, particularly how states respond to the threat or use of force through trade, alliance politics, and security institutions. 
+
+I received my Bachelor of Laws (LL.B.) from the University College of London, Master of International and Public Affairs (MIPA) from the University of Hong Kong, and Master of International Affairs (MIA) from the National University of Singapore. 
+
+Before joining Princeton, I worked as a research assistant at the National University of Singapore's Lee Kuan Yew School of Public Policy, Asia-Pacific Economic Cooperation (APEC), and Asia Competitiveness Institute.
