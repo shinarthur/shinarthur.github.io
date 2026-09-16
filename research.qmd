@@ -117,12 +117,18 @@ title: Research
 
 :::: pub
 ::: pub-body
-**Introducing the Security Council and Use of Force Justification (SCRUFJ) Text Corpus Dataset”**<br> With Chu, Jonathan.
+**Introducing the Security Council and Use of Force Justification (SCRUFJ) Text Corpus Dataset**<br> With Chu, Jonathan.
 :::
 ::::
 
 :::: pub
 ::: pub-body
-**How Firms Respond to Regulatory Ambiguity: Rhetorical Political Alignment After China’s Tech Crackdown**<br> With Zhang, Zhen & Zhang, Chunyi.
+**How Firms Respond to Regulatory Ambiguity: Rhetorical Political Alignment After China’s Tech Crackdown**<br> With Zhang, Zhen & Zhang, Chunyi.<br> *Draft available upon request*.
+:::
+::::
+
+:::: pub
+::: pub-body
+**When Does Trade Follow the Flag: Economic Responses to Political Tensions or Costly Signals?**<br> 
 :::
 ::::
