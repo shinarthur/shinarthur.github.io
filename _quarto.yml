@@ -6,6 +6,12 @@
 project:
   type: website
   output-dir: _site
+  # files/ holds the CV's own Quarto project (R + Typst, built locally into
+  # the PDF). The site only serves that PDF, so never render it here -- the
+  # GitHub runner has no R and the build fails if it tries.
+  render:
+    - "*.qmd"
+    - "!files/"
 
 website:
   title: "Arthur Jun Shin"
