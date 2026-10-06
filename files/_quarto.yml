@@ -1,0 +1,20 @@
+project:
+  type: default
+  render:
+    # Only the top-level document; cv/*.qmd are includes, not standalone pages.
+    - cv.qmd
+
+format:
+  typst:
+    # File name for the rendered PDF (and the .typ kept alongside it).
+    # Change this to rename the export -- no need to rename cv.qmd itself.
+    output-file: "ArthurJunShin_CV.pdf"
+    template-partials:
+      - typst-show.typ
+      - typst-template.typ
+    keep-typ: true
+
+execute:
+  echo: false
+  warning: false
+  message: false

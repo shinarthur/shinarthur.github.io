@@ -1,0 +1,16 @@
+# =============================================================================
+# SKILLS
+# =============================================================================
+section: Skills
+layout: lines
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  # item_gap: 3pt   # between lines
+  # leading: 0.4em  # wrapped lines inside a paragraph
+
+# ---- content ----------------------------------------------------------------
+items:
+  - '*Computer/Programming:* R, Stata, LaTeX, SQL, Qualtrics'
+
+  - '*Languages:* English (native), Korean (native), Mandarin (conversational)'

@@ -1,0 +1,29 @@
+# =============================================================================
+# TEACHING ASSISTANT EXPERIENCE
+# =============================================================================
+section: Teaching Experience
+layout: entries
+
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  title_bold: false      # bold it (left side only)
+  line_indent: 0pt
+  row_gap: 0.5em
+  leading: 0.4em
+  right_width: 1cm    # right-hand column, for whatever follows " | "
+
+
+# ---- content ----------------------------------------------------------------
+entries:
+  - lines:
+      - 'International Relations of Asia, _National University of Singapore_ | 2025'
+
+  - lines:
+      - 'Foreign Policy Analysis, _National University of Singapore_ | 2024'      
+
+  - lines:
+      - 'Survey Design for Researchers and Decision-Makers, _National University of Singapore_ | 2024'
+
+  - lines:
+      - '3 Campus East Asia Program, _University of Hong Kong_ | 2019'

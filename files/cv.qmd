@@ -1,0 +1,52 @@
+---
+title: "Jun Hyun (Arthur) Shin — Curriculum Vitae"
+---
+
+<!--
+  THE SPINE. This file decides which sections appear and in what order.
+  Everything else -- the content of a section AND its style -- lives in that
+  section's own file under sections/.
+
+  Reorder the list below to reorder the CV. Comment out a name to drop that
+  section. Add a name to add one (create sections/<name>.yml first).
+-->
+
+```{r}
+#| label: setup
+#| include: false
+source("R/cv-helpers.R")
+```
+
+<!-- 
+  To do: 
+    - change working paper section to peer-reviewed, under review, etc 
+    - change references to be two column
+    - add last updated line somewhere
+-->
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+cv_preamble()      # page setup, from sections/header.yml + R/cv-defaults.R
+cv_header()        # name and contact line
+
+cv_section("education")
+
+cv_section("working-papers")
+cv_section("policy-publications")
+
+cv_section("presentations")
+
+cv_section("awards")
+cv_section("research")
+cv_section("teaching")
+
+cv_section("skills")
+
+cv_raw("#pagebreak()\n")
+
+cv_section("references")
+
+```

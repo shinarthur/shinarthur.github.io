@@ -35,6 +35,24 @@ main h2 {
   border-bottom: 1px solid var(--rule);
   letter-spacing: -0.01em;
 }
+/* Page titles and section headings in Oswald caps, echoing the black name
+   block in the header. Oswald is only loaded up to 500, so the weight is set
+   outright rather than inheriting the headings' 700 (which the browser would
+   fake). */
+h1.title,
+main h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+/* Section headings sit a step below the page title: smaller, grey, wider
+   tracking, so "Research" and "Work in progress" no longer read as equals. */
+main h2 {
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
 main > section.level2:first-of-type > h2,
 main > h2:first-of-type { margin-top: 1.4rem; }
 
@@ -108,20 +126,35 @@ blockquote {
 }
 
 .quarto-about-trestles #title-block-header { margin-bottom: 0.8rem; }
+/* The name takes its Oswald caps from the shared heading rule above. */
 .quarto-about-trestles h1.title {
   font-size: 1.55rem;
   line-height: 1.2;
   margin-bottom: 0.35rem;
 }
+/* The subtitle is set like an .eyebrow label. Size and
+   tracking are just tight enough to keep the line whole in the 320px rail;
+   any wider and "Princeton University" wraps on its own. */
 .quarto-about-trestles .subtitle,
 .quarto-about-trestles p.subtitle.lead {
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.6;
   color: var(--ink-soft);
   font-style: normal;
 }
 
-.about-links .about-link { color: var(--ink-soft); }
+/* Same type as the .status tags and the Abstract/PDF buttons on Research. */
+.about-links .about-link {
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
 .about-links .about-link:hover {
   color: var(--accent);
   border-color: var(--accent);
@@ -249,17 +282,59 @@ ul.updates { list-style: none; padding-left: 0; margin-top: 0.5rem; }
   white-space: nowrap;
 }
 
-details > summary {
-  font-weight: 600;
-  color: var(--accent);
-  cursor: pointer;
-  font-size: 0.92rem;
-  margin-top: 0.35rem;
+/* ---- Link row + abstract toggle ------------------------------------------ */
+/* `[[PDF](x.pdf) [Slides](y.pdf)]{.pub-links}` renders as a row of small
+   outlined buttons; styles/abstract-toggle.html adds the "Abstract" button to
+   the front of it and hides the `::: abstract` block until it is clicked. */
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
 }
-details > p, details > div {
-  margin-top: 0.5rem;
+.pub-links a,
+.abstract-toggle {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  padding: 0.12rem 0.55rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.pub-links a:hover,
+.abstract-toggle:hover,
+.abstract-toggle[aria-expanded="true"] {
+  color: #fff;
+  background: var(--accent);
+  text-decoration: none;
+}
+.abstract-toggle::after {
+  content: "\25BE";              /* small down-pointing triangle */
+  display: inline-block;
+  margin-left: 0.35em;
+  transition: transform 0.15s ease;
+}
+.abstract-toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
+
+.abstract {
+  margin-top: 0.6rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--rule);
   color: var(--ink-soft);
-  font-size: 0.95rem;
+}
+.abstract p { font-size: 0.95rem; }
+
+@media print {
+  .abstract[hidden] { display: block !important; }
+  .abstract-toggle { display: none; }
 }
 
 /* ---- Course / CV entries ------------------------------------------------- */

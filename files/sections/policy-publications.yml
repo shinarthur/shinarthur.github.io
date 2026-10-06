@@ -1,0 +1,27 @@
+# =============================================================================
+# POLICY PUBLICATIONS
+# =============================================================================
+section: Policy Publications
+layout: numbered
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  # pub_gap: 5pt            # between entries
+  # leading: 0.4em          # wrapped lines inside a paragraph
+  # pub_number_width: 1.8em # width of the number column = the text indent
+  # pub_number_gap: 0.6em   # number -> text
+  # pub_marker: number      # number | bullet | none
+  # pub_number_bold: true   # bold the numbers
+  # pub_reverse: true       # count down, so the newest keeps the highest number
+
+# ---- content ----------------------------------------------------------------
+items:
+  - >-
+    Lew, S., *Shin, A*, Ludwig, M. (2024). 
+    "Court Decisions on Gerrymandering Can Mobilize Voters." 
+    _Georgetown Public Policy Review, Elections Edition,_ 26-30.
+
+  - >-
+    San Andres, E. Vasquez, G., Chen, T., *Shin, A.* (2024). 
+    "Enhancing MSME Data Interoperability in the APEC Region."
+    _APEC Issues Paper_ No. 14.

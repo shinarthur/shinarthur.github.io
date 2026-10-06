@@ -1,0 +1,31 @@
+# =============================================================================
+# REFERENCES
+# =============================================================================
+section: References
+layout: references
+
+# ---- style: applies to this section only ------------------------------------
+# style:
+#   # ref_gap: 8pt        # between referees
+#   # ref_line_gap: 1pt   # between the lines of one referee
+#   # leading: 0.4em      # wrapped lines inside a paragraph
+
+# ---- content ----------------------------------------------------------------
+people:
+  - name: Jonathan Art. Chu
+    lines:
+      - Associate Professor
+      - National University of Singapore
+    email: jonchu@nus.edu.sg
+
+  - name: Kai Quek
+    lines:
+      - Associate Professor of Politics
+      - University of Hong Kong
+    email: quek@hku.hk
+
+  - name: Adam Yao Liu
+    lines:
+      - Assistant Professor
+      - National University of Singapore
+    email: sppliuy@nus.edu.sg

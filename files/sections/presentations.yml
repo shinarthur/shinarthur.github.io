@@ -1,0 +1,59 @@
+# =============================================================================
+# PRESENTATIONS
+# =============================================================================
+section: Presentations
+layout: entries
+
+# ---- style: applies to this section only ------------------------------------
+# Same shape as Research & Professional Experience.
+style:
+  title_bold: false     # citations are bolded by hand with *Shin, A.*
+  line_indent: 0pt
+  row_gap: 0.5em
+  leading: 0.4em
+  right_width: 0cm    # right-hand column, here just the year
+
+# ---- content ----------------------------------------------------------------
+# One line per entry: the citation, then " | <year>" to push the year to the
+# right margin, exactly like Research & Professional Experience.
+#
+# Quote the whole line in single quotes ('...') UNLESS it contains an
+# apostrophe (e.g. "China's") -- a single quote inside a single-quoted string
+# closes it early. Those lines use a ">-" block scalar instead, which is safe
+# with colons, straight quotes, apostrophes and a leading * all at once.
+entries:
+  - lines:
+      - >-
+        2026. Chu, J, *Shin, A.* "Introducing the Security Council and Use of Force
+        Justification Text Corpus Dataset." _Pacific International Politics
+        Conference_ (USA).
+
+  - lines:
+      - >-
+        2026. Zhang, Z., *Shin, A.*, Zhang, C. "Signaling Nationalism: How Firms Use
+        Political Rhetoric under Regulatory Uncertainty during China's 2020
+        Tech Crackdown." _LKYSPP IR Brownbag_ (Singapore).
+
+  - lines:
+     - >-
+        2026. 'Zhang, Z, *Shin, A*, and Zhang, C. "Signaling Nationalism." 
+        _Asia-Pacific Politics and Public Administration Conference_ (Hong Kong).
+
+  - lines:
+     - >-
+        2025. *Shin, A*. "Diversified Balancing: How External Security Threats Drive
+        Arms Supplier Diversification." _Pacific International Politics
+        Conference_ (Japan).
+
+  - lines:
+      - >-
+        2025. Lew, S., *Shin, A.*, Lee, J., Tan, K. "Informing the Digital Economy
+        Framework Agreement Through the Language of Current Agreements." _Asia
+        Competitiveness Institute Annual Research Conference_ (Singapore).
+
+  - lines:
+      - >-
+        2024. Lew, S., *Shin, A.*, Lee, J. "Digital Economy Agreements as Data: A
+        Natural Language Processing Analysis of the Digital Economy of ASEAN."
+        _Asia Competitiveness Institute Data and Policy Analytics Seminar
+        Series_ (online).

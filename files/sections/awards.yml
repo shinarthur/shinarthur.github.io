@@ -1,0 +1,42 @@
+# =============================================================================
+# AWARDS & HONORS
+# =============================================================================
+section: Awards & Honors
+layout: years
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  # item_gap: 5pt      # between rows
+  # leading: 0.4em    # wrapped lines inside a paragraph
+  # year_width: 1.6cm # width of the year column = the text indent
+  # year_gap: 0.6em   # year -> text
+  # note_gap: 1pt   # award -> its italic note
+
+# ---- content ----------------------------------------------------------------
+# `year` optional (as in teaching). `note` renders italic underneath.
+# Write \$ for a literal dollar sign.
+items:
+  - year: '2025'
+    text: '*Graduate Student Paper Award*, Pacific International Politics Conference'
+
+  - text: '*Best Master in International Affairs Student Prize*, LKYSPP'
+
+  - text: '*Best Master in International Affairs Senior Essay Medal*, LKYSPP'
+
+  - text: "*Dean's List Award - Spring 2025*, LKYSPP"
+
+  - year: '2024'
+    text: '*Merit Scholarship for Academic Excellence*, LKYSPP'
+
+  - text: "*Dean's Leadership Award - First Prize*, LKYSPP"
+
+  - text: "*Dean's List Award - Spring & Fall 2024*, LKYSPP"
+
+  - year: '2023'
+    text: "*Dean's List Award - Fall 2023*, LKYSPP"
+
+  - year: '2016'
+    text: '*UK National Round Semifinalist*, Jessup International Law Competition'
+
+  - year: '2014'
+    text: "*Provost's Excellence Scholarship Award*, UCL"

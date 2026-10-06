@@ -1,0 +1,48 @@
+# =============================================================================
+# EDUCATION
+# =============================================================================
+section: Education
+layout: entries
+
+# ---- style: applies to this section only ------------------------------------
+# Anything omitted falls back to R/cv-defaults.R.
+style:
+  # # -- spacing --
+  # entry_gap: 9pt        # between entries
+  # row_gap: 5pt          # between the lines of one entry
+  # leading: 0.4em        # wrapped lines inside a paragraph
+  # # -- indent (YAML spaces do nothing; use these) --
+  # line_indent: 0pt      # how far the lines are indented
+  # indent_from: 2        # 1 = indent every line, 2 = line 1 flush, rest indented
+  # # -- the right-hand column (everything after " | ") --
+  # right_width: 4cm      # its width
+  # right_italic: false   # italicise it
+  # # -- the first line of an entry --
+  # title_bold: true      # bold it (left side only)
+  # # -- bullets --
+  # bullet_gap: 6pt       # last line -> first bullet
+  # bullet_item_gap: 3pt  # between bullets
+  # bullet_indent: 1.1em  # left edge -> marker (raise to match line_indent)
+  # bullet_body_gap: 0.6em # marker -> text
+
+# ---- content ----------------------------------------------------------------
+# An entry is just a list of `lines`, so add or drop lines freely.
+#   " | "  splits a line: everything after it is pushed to the right margin.
+#   *bold*, _italic_, "quotes" curl automatically.
+entries:
+  - lines:
+      - Princeton University | 2026 - Present
+      - Ph.D., Department of Politics 
+      - _Subfield: International Relations_
+
+  - lines:
+      - National University of Singapore | 2023 - 2025
+      - Master in International Affairs
+
+  - lines:
+      - University of Hong Kong | 2018 - 2019
+      - Master of International and Public Affairs (Distinction)
+  
+  - lines:
+      - University College London | 2014 - 2017
+      - Bachelor of Laws, LL.B. (Honors)

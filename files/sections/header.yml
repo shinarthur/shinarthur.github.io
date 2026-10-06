@@ -1,0 +1,32 @@
+# =============================================================================
+# HEADER
+# =============================================================================
+name: Arthur Jun. Shin
+
+# One entry per item on the contact line.
+#   icon: any Font Awesome name, minus the "fa-" (envelope, github, globe,
+#         linkedin, phone, location-dot, orcid, x-twitter). Omit for no icon.
+#   text: what is shown.   link: where it goes (omit for plain text).
+contact:
+  - text: Fisher Hall, Princeton NJ 08544
+
+  - icon: envelope
+    text: shinarthur@princeton.edu
+    link: mailto:shinarthur@princeton.edu
+
+  - icon: earth-americas
+    text: shinarthur.github.io
+    link: https://shinarthur.github.io
+
+# Page number is appended automatically.
+footer: Shin
+
+# ---- style for the header ---------------------------------------------------
+style:
+  name_size: 20pt
+  name_smallcaps: true
+  contact_size: 10pt
+  contact_sep: '  ·  '
+  icon_gap: 0.4em      # icon -> text beside it
+  header_gap: 10pt      # name -> contact line
+  header_below: 17pt   # contact line -> first section

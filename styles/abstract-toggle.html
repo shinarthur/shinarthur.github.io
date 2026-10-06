@@ -1,0 +1,36 @@
+<!-- Abstract toggles for research.qmd.
+
+     Every `::: abstract` block inside a `.pub-body` is collapsed behind an
+     "Abstract" button, unless styles/abstract-toggle.lua marked it
+     data-collapsible="false" (set by `abstract-toggle: F` or `toggle=F`). The button joins the entry's `[...]{.pub-links}` row
+     if it has one, otherwise it gets a row of its own; the abstract always
+     opens directly underneath that row. Without JavaScript the abstract just
+     stays visible, and the text is in the page either way for site search. -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.pub-body .abstract:not([data-collapsible="false"])').forEach((abstract, i) => {
+    abstract.id ||= `abstract-${i + 1}`;
+    abstract.hidden = true;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "abstract-toggle";
+    button.textContent = "Abstract";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", abstract.id);
+    button.addEventListener("click", () => {
+      abstract.hidden = !abstract.hidden;
+      button.setAttribute("aria-expanded", String(!abstract.hidden));
+    });
+
+    let row = abstract.parentElement.querySelector(".pub-links");
+    if (!row) {
+      row = document.createElement("p");
+      row.className = "pub-links";
+      abstract.before(row);
+    }
+    row.prepend(button);
+    (row.closest("p") || row).after(abstract);
+  });
+});
+</script>

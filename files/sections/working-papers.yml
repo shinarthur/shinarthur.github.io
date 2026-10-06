@@ -1,0 +1,29 @@
+# =============================================================================
+# WORKING PAPERS
+# =============================================================================
+section: Working Papers
+layout: numbered
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  pub_gap: 15pt            # between entries
+  # leading: 0.4em          # wrapped lines inside a paragraph
+  # pub_number_width: 1.8em # width of the number column = the text indent
+  # pub_number_gap: 0.6em   # number -> text
+  # pub_marker: number      # number | bullet | none
+  # pub_number_bold: true   # bold the numbers
+  # pub_reverse: true       # count down, so the newest keeps the highest number
+
+# ---- content ----------------------------------------------------------------
+items:
+  - >-
+    "Diversified Balancing: How External Security Threats Drive Arms Supplier
+    Diversification"
+
+  - >-
+    "Introducing the Security Council and Use of Force Justification (SCRUFJ)
+    Text Corpus Dataset" - with Chu, J.
+
+  - >-
+    "How Firms Respond to Regulatory Ambiguity: Rhetorical Political Alignment
+    After China's Tech Crackdown" - with Zhang, Z. & Zhang, C.

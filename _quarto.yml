@@ -39,6 +39,9 @@ format:
       - cosmo
       - styles/theme.scss
     css: styles/styles.css
+    include-after-body: styles/abstract-toggle.html
+    filters:
+      - styles/abstract-toggle.lua
     page-layout: full
     toc: false
     anchor-sections: true

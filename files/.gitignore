@@ -1,0 +1,4 @@
+# Quarto build artifacts
+/.quarto/
+cv_files/
+**/*.quarto_ipynb

@@ -1,0 +1,43 @@
+# =============================================================================
+# RESEARCH & PROFESSIONAL EXPERIENCE
+# =============================================================================
+section: Research & Professional Experience
+layout: entries
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  title_bold: false      # bold it (left side only)
+  line_indent: 0pt
+  row_gap: 0.5em
+  leading: 0.4em
+  right_width: 2.5cm    # right-hand column, for whatever follows " | "
+
+
+# ---- content ----------------------------------------------------------------
+entries:
+  - lines:
+      - '*Research Assistant* to Dr. Jacob Shapiro, Princeton University | 2026'
+      
+  - lines:
+      - '*Research Assistant* to Dr. Jonathan Chu, National University of Singapore | 2023 - 2026'
+
+  - lines:
+      - '*Research Assistant* to Dr. Kai Quek, University of Hong Kong | 2024 - 2025'      
+
+  - lines:
+      - '*Research Intern* at the Asia-Pacific Economic Cooperation | 2024'
+
+  - lines:
+      - '*Graduate Research Analyst* at Asia Competitiveness Institute | 2023 - 2024'
+
+  - lines:
+      - '*Research Assistant* to Dr. Lami Kim, U.S. Army War College | 2022 - 2023'
+
+  - lines:
+      - '*National Service Agent* at Korean Credit Guarantee Fund | 2020 - 2022'
+
+  - lines:
+      - '*Legal Intern* at Clifford Chance LLP | 2017'
+      
+  - lines:
+      - '*Legal Intern* at Rahmat Lim \& Partners | 2016'

@@ -1,0 +1,49 @@
+# =============================================================================
+# PRESENTATIONS
+# =============================================================================
+section: Presentations
+layout: numbered
+
+# ---- style: applies to this section only ------------------------------------
+style:
+  pub_marker: bullet      # number | bullet | none
+  pub_gap: 5pt            # between entries
+  leading: 0.4em          # wrapped lines inside a paragraph
+  pub_number_width: 1em   # width of the marker column
+  pub_number_gap: 0.6em   # marker -> text
+  pub_reverse: true       # (numbers only) count down from the newest
+
+# ---- content ----------------------------------------------------------------
+# Block scalars (>-) let a line contain colons, quotes and leading * without
+# any YAML escaping. Continuation lines must be indented past the "-".
+items:
+  - >-
+    2026. Chu, J, *Shin, A.*. "Introducing the Security Council and Use of
+    Force Justification Text Corpus Dataset." _Pacific International
+    Politics Conference_ (USA).
+
+  - >-
+    2026. Zhang, Z., *Shin, A.*, Zhang, C. "Signaling Nationalism: How Firms
+    Use Political Rhetoric under Regulatory Uncertainty during China's 2020
+    Tech Crackdown." _LKYSPP IR Brownbag_ (Singapore).
+
+  - >-
+    2026. Zhang, Z, *Shin, A*, and Zhang, C. "Signaling Nationalism."
+    _Asia-Pacific Politics and Public Administration Conference_ (Hong
+    Kong).
+
+  - >-
+    2025. *Shin, A*. "Diversified Balancing: How External Security Threats
+    Drive Arms Supplier Diversification." _Pacific International Politics
+    Conference_ (Japan).
+
+  - >-
+    2024. Lew, S., *Shin, A.*, Lee, J., Tan, K. "Informing the Digital
+    Economy Framework Agreement Through the Language of Current Agreements."
+    _Asia Competitiveness Institute Annual Research Conference_ (Singapore).
+
+  - >-
+    2024. Lew, S., *Shin, A.*, Lee, J. "Digital Economy Agreements as Data:
+    A Natural Language Processing Analysis of the Digital Economy of ASEAN."
+    _Asia Competitiveness Institute Data and Policy Analytics Seminar
+    Series_ (online).

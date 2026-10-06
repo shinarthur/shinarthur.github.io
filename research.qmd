@@ -1,5 +1,9 @@
 ---
 title: Research
+# T: every `::: abstract` is hidden behind an "Abstract" button.
+# F: abstracts are always shown, no button.
+# Override one entry with `::: {.abstract toggle=F}` (or toggle=T).
+abstract-toggle: T
 ---
 
 ```{=html}
@@ -23,15 +27,13 @@ title: Research
 
 <!-- [Winner, Best Paper Award, APSA Section]{.award} -->
 
-<!-- <details> -->
+<!-- [[PDF](files/paper1.pdf) [Replication](https://dataverse.harvard.edu/EXAMPLE) [Appendix](files/paper1-appendix.pdf)]{.pub-links} -->
 
-<!-- <summary>Abstract</summary> -->
+<!-- ::: abstract -->
 
 <!-- Paste the abstract here. It stays collapsed until a reader opens it, which keeps the page scannable. -->
 
-<!-- </details> -->
-
-<!-- [[PDF](files/paper1.pdf)] · [[Replication](https://dataverse.harvard.edu/EXAMPLE)] · [[Appendix](files/paper1-appendix.pdf)] -->
+<!-- ::: -->
 
 <!-- ::: -->
 
@@ -47,15 +49,13 @@ title: Research
 
 <!-- [*Journal Name*, 2025, 69(3): 512--534.]{.venue} -->
 
-<!-- <details> -->
+<!-- [[PDF](files/paper2.pdf) [Replication](https://example.com)]{.pub-links} -->
 
-<!-- <summary>Abstract</summary> -->
+<!-- ::: abstract -->
 
 <!-- Abstract text. -->
 
-<!-- </details> -->
-
-<!-- [[PDF](files/paper2.pdf)] · [[Replication](https://example.com)] -->
+<!-- ::: -->
 
 <!-- ::: -->
 
@@ -75,13 +75,11 @@ title: Research
 
 <!-- [Revise and resubmit, *Journal*.]{.venue} -->
 
-<!-- <details> -->
-
-<!-- <summary>Abstract</summary> -->
+<!-- ::: abstract -->
 
 <!-- Abstract text. -->
 
-<!-- </details> -->
+<!-- ::: -->
 
 <!-- ::: -->
 
@@ -95,40 +93,90 @@ title: Research
 
 <!-- **[Working paper title](files/wp2.pdf)** [Under review]{.status} -->
 
-<!-- <details> -->
-
-<!-- <summary>Abstract</summary> -->
+<!-- ::: abstract -->
 
 <!-- Abstract text. -->
 
-<!-- </details> -->
+<!-- ::: -->
 
 <!-- ::: -->
 
 <!-- ::::: -->
 
-## Work in Progress {#work-in-progress}
+## [In preparation]{.eyebrow} Work in progress {#work-in-progress}
 
-:::: pub
-::: pub-body
-**Diversified Balancing: How External Security Threats Drive Arms Supplier Diversification**<br> *Draft available upon request*.
-:::
-::::
+::::: {.pub}
 
-:::: pub
-::: pub-body
-**Introducing the Security Council and Use of Force Justification (SCRUFJ) Text Corpus Dataset**<br> With Chu, Jonathan.
-:::
-::::
+[1]{.pubnum}
 
-:::: pub
-::: pub-body
-**How Firms Respond to Regulatory Ambiguity: Rhetorical Political Alignment After China’s Tech Crackdown**<br> With Zhang, Zhen & Zhang, Chunyi.<br> *Draft available upon request*.
-:::
-::::
+::: {.pub-body}
 
-:::: pub
-::: pub-body
-**When Does Trade Follow the Flag: Economic Responses to Political Tensions or Costly Signals?**<br> 
+**Diversified Balancing: How External Security Threats Drive Arms Supplier Diversification**<br>
+[*Draft available upon request.*]{.venue}
+
+::: {.abstract toggle=T}
+
+<!-- Paste the abstract here. Until then no Abstract button is shown. -->
+
 :::
-::::
+
+:::
+
+:::::
+
+::::: {.pub}
+
+[2]{.pubnum}
+
+::: {.pub-body}
+
+**Introducing the Security Council and Use of Force Justification (SCRUFJ) Text Corpus Dataset**<br>
+with [Jonathan Chu](https://www.jonathanchu.org/).
+
+::: {.abstract toggle=T}
+
+<!-- Paste the abstract here. Until then no Abstract button is shown. -->
+
+:::
+
+:::
+
+:::::
+
+::::: {.pub}
+
+[3]{.pubnum}
+
+::: {.pub-body}
+
+**How Firms Respond to Regulatory Ambiguity: Rhetorical Political Alignment After China’s Tech Crackdown**<br>
+with [Zhen Zhang](https://lsa.umich.edu/polisci/people/graduate-students/zhen-zhang.html) and [Chunyi Zhang](https://directory.smeal.psu.edu/cxz5400).<br>
+[*Draft available upon request.*]{.venue}
+
+::: {.abstract toggle=T}
+
+<!-- Paste the abstract here. Until then no Abstract button is shown. -->
+
+:::
+
+:::
+
+:::::
+
+::::: {.pub}
+
+[4]{.pubnum}
+
+::: {.pub-body}
+
+**When Does Trade Follow the Flag: Economic Responses to Political Tensions or Costly Signals?**
+
+::: {.abstract toggle=T}
+
+<!-- Paste the abstract here. Until then no Abstract button is shown. -->
+
+:::
+
+:::
+
+:::::
