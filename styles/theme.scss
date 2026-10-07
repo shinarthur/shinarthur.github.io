@@ -45,10 +45,14 @@ $h1-font-size: 2rem;
 $h2-font-size: 1.45rem;
 $h3-font-size: 1.15rem;
 
-$navbar-bg: $bone;
+// Header and footer bars share one very pale tint of $accent, so they read as
+// a frame around the white page. Change $band to recolour both, or set either
+// bar to #ffffff (plain white) or $bone (the original warm off-white).
+$band:      #f8fafd;
+$navbar-bg: $band;
 $navbar-fg: #000;
 $navbar-hl: $accent;
-$footer-bg: $bone;
+$footer-bg: $band;
 $footer-fg: $ink;
 $footer-size: 0.88rem;
 
